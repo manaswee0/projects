@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            height: 100vh;
+            width: 100%;
+            grid-gap: 10px;
+
+        }
+       
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+      
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+        }
+
+    
+        button {
+            width: 20px;
+            height: 20px;
+            background-color: rgb(78, 5, 5);
+            color: white;
+            border: none;
+            margin-left: 10px;
+            border: 1px solid white;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        #one {
+            background-color: burlywood;
+            border: 1px solid black;
+        }
+
+        #two {
+            background-color: chartreuse;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+   <div id="main">
+    <div id="one" style="background-color: rgb(191, 170, 214); border: 2px solid black; border-radius: 7px;" >
+        <h1 style="text-decoration: underline;">
+            To-do List</h1>
+            <div id="list" style="font-size: larger;">
+              <ul></ul>
+            </div>
+        
+    </div>
+
+    <textarea style="height: 100vh; width: 100%; background-color: rgb(147, 204, 206); border: 2px solid black; border-radius: 7px;" placeholder="I need to..." ;color: black;></textarea>
+  
+   </div>
+
+<script>
+    const text = document.querySelector('textarea');
+    const list = document.querySelector('ul');
+
+    function textarea(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            value = text.value;
+            const li = document.createElement('li');
+
+            const input = document.createElement('input');
+            input.type = "checkbox";
+            
+            const button = document.createElement('button');
+            button.innerText = "x";
+            
+            li.innerText = value;
+            li.insertBefore(input, li.firstChild);
+            li.appendChild(button);
+
+          
+            list.appendChild(li);
+
+            button.addEventListener('click', function() {
+                list.removeChild(li);
+            });
+
+            input.addEventListener('click', function() {
+                li.style.textDecoration = "line-through"
+            });
+
+
+            text.value = "";
+        }
+    }
+
+    text.addEventListener('keydown', textarea);
+</script>
+
+</body>
+</html>
