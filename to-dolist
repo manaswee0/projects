@@ -42,15 +42,7 @@
             text-align: center;
         }
 
-        #one {
-            background-color: burlywood;
-            border: 1px solid black;
-        }
-
-        #two {
-            background-color: chartreuse;
-            border: 1px solid black;
-        }
+       
     </style>
 </head>
 <body>
