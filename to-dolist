@@ -6,6 +6,8 @@
     <title>Document</title>
 
     <style>
+        
+      
         #main {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -22,6 +24,10 @@
             margin-bottom: 8px;
         }
 
+        textarea::placeholder {
+            font-size: 20px;
+            color: rgba(0, 0, 0, 0.6); 
+        }
       
         input[type="checkbox"] {
             width: 20px;
@@ -42,21 +48,23 @@
             text-align: center;
         }
 
+      
+
        
     </style>
 </head>
 <body>
    <div id="main">
-    <div id="one" style="background-color: rgb(191, 170, 214); border: 2px solid black; border-radius: 7px;" >
-        <h1 style="text-decoration: underline;">
+    <div id="one" style="background-color: rgb(191, 170, 214); border: 2px ; border-radius: 7px;" >
+        <h1 style="text-decoration: underline; margin-left: 15px;">
             To-do List</h1>
-            <div id="list" style="font-size: larger;">
+            <div id="list" style="font-size: 20px;">
               <ul></ul>
             </div>
         
     </div>
 
-    <textarea style="height: 100vh; width: 100%; background-color: rgb(147, 204, 206); border: 2px solid black; border-radius: 7px;" placeholder="I need to..." ;color: black;></textarea>
+    <textarea style="height: 100vh; width: 100%; background-color: rgb(147, 204, 206); border-radius: 7px;" placeholder="I need to..." ;color: black;></textarea>
   
    </div>
 
@@ -101,3 +109,4 @@
 
 </body>
 </html>
+
